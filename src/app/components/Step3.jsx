@@ -1,9 +1,9 @@
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { FaFileImage } from "react-icons/fa";
-export const Step3 = () => {
+export const Step3 = ({ handleOnclick, backOnclick }) => {
   return (
-    <div>
+    <form onSubmit={handleOnclick}>
       <Header />
       <div className="flex flex-col h-[400px] justify-between">
         <div className="flex flex-col h-fit gap-3 justify-around">
@@ -26,8 +26,13 @@ export const Step3 = () => {
           </div>
         </div>
 
-        <Footer text="continue 1/3 >" text1="< back" />
+        <Footer
+          text="continue 3/3 v"
+          text1="< back"
+          backCount={3}
+          backOnclick={backOnclick}
+        />
       </div>
-    </div>
+    </form>
   );
 };

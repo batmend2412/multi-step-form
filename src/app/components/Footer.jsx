@@ -1,9 +1,9 @@
-export const Footer = ({ text, text1, handleOnclick, count }) => {
+export const Footer = ({ text, backOnclick, handleOnclick, backCount }) => {
   return (
     <div className="flex justify-center gap-2 ">
-      {count > 1 && (
+      {backCount > 1 && (
         <button
-          onClick={handleOnclick}
+          onClick={backOnclick}
           className="w-[128px] h-[32px] rounded-[10px] p-3 flex  border-2 border-gray-500  text-black justify-center items-center"
         >
           Back
@@ -12,6 +12,7 @@ export const Footer = ({ text, text1, handleOnclick, count }) => {
 
       <button
         id="nextButton"
+        type="submit"
         onClick={handleOnclick}
         className="w-full bg-gray-950 h-[28px] flex p-4 text-white justify-center items-center rounded-[10px]"
       >
