@@ -1,8 +1,10 @@
 "use client";
+import { Next } from "./components";
 import { Step1 } from "./components/Step1";
 import { Step2 } from "./components/Step2";
 import { Step3 } from "./components/Step3";
 import { useState } from "react";
+
 export default function Home() {
   const initialFormValues = {
     Firstname: "",
@@ -15,15 +17,25 @@ export default function Home() {
   };
   const [count, setCount] = useState(0);
   const [data, setData] = useState(initialFormValues);
-  const CurrentStep = [Step1, Step2, Step3][count];
-
+  const [error, setError] = useState(false);
+  const CurrentStep = [Step1, Step2, Step3, Next][count];
+  const checkValidation = () => {
+    if (data.Firstname.length < 8) {
+      setError(true);
+    }
+    return false;
+  };
   const stepCount = (event) => {
     event.preventDefault();
-    if (count >= 2) {
-      return;
+
+    if (!checkValidation()) {
+      if (count >= 3) {
+        return;
+      }
+      setCount(count + 1);
     }
-    setCount(count + 1);
   };
+
   const stepCountBack = (event) => {
     event.preventDefault();
 

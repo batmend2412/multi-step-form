@@ -4,7 +4,10 @@ import { FaFileImage } from "react-icons/fa";
 export const Step3 = ({ handleOnclick, backOnclick }) => {
   return (
     <form onSubmit={handleOnclick}>
-      <Header />
+      <Header
+        headertext="Please provide all current information accurately."
+        headertext1="Join Us! 😎"
+      />
       <div className="flex flex-col h-[400px] justify-between">
         <div className="flex flex-col h-fit gap-3 justify-around">
           <label>
@@ -27,10 +30,11 @@ export const Step3 = ({ handleOnclick, backOnclick }) => {
         </div>
 
         <Footer
-          text="continue 3/3 v"
+          text="continue 3/3"
           text1="< back"
           backCount={3}
           backOnclick={backOnclick}
+          hideCount={3}
         />
       </div>
     </form>

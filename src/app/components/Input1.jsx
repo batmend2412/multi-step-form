@@ -1,10 +1,4 @@
-export const Input1 = ({
-  name,
-  text,
-  placeholder,
-  isError,
-  handleOnChange,
-}) => {
+export const Input1 = ({ text, placeholder, isError, handleOnChange }) => {
   return (
     <div className="w-[416ox]  gap-1 flex flex-col">
       <label className="text-[14px] font-semibold text-[#334155]">

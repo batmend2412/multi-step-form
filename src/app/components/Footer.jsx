@@ -1,4 +1,10 @@
-export const Footer = ({ text, backOnclick, handleOnclick, backCount }) => {
+export const Footer = ({
+  text,
+  backOnclick,
+  handleOnclick,
+  backCount,
+  hideCount,
+}) => {
   return (
     <div className="flex justify-center gap-2 ">
       {backCount > 1 && (
@@ -9,15 +15,16 @@ export const Footer = ({ text, backOnclick, handleOnclick, backCount }) => {
           Back
         </button>
       )}
-
-      <button
-        id="nextButton"
-        type="submit"
-        onClick={handleOnclick}
-        className="w-full bg-gray-950 h-[28px] flex p-4 text-white justify-center items-center rounded-[10px]"
-      >
-        {text}
-      </button>
+      {hideCount < 4 && (
+        <button
+          id="nextButton"
+          type="submit"
+          onClick={handleOnclick}
+          className="w-full bg-gray-950 h-[28px] flex p-4 text-white justify-center items-center rounded-[10px]"
+        >
+          {text}
+        </button>
+      )}
     </div>
   );
 };

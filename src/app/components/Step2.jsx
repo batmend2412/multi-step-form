@@ -9,7 +9,10 @@ export const Step2 = ({
 }) => {
   return (
     <form onSubmit={handleOnclick}>
-      <Header />
+      <Header
+        headertext="Please provide all current information accurately."
+        headertext1="Join Us! 😎"
+      />
       <div className="flex flex-col h-[400px] justify-between">
         <div className="flex flex-col h-[300px] justify-around">
           <Input1
@@ -38,6 +41,7 @@ export const Step2 = ({
           text={`continue ${conCount}/3 `}
           backCount={2}
           backOnclick={backOnclick}
+          hideCount={2}
         />
       </div>
     </form>
